@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Календарь</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Poppins:wght@600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles/style.css" />
+</head>
+
+<body>
+  <header class="header center">
+      <div class="header__buttons">
+          <button class="header__button header__button_add">Добавить</button>
+          <button class="header__button header__button_update">Обновить</button>
+      </div>
+      <div class="header__search_area">
+          <button class="header__search_btn"></button>
+          <input class="header__search_input" type="text" placeholder="Поиск" />
+      </div>
+  </header>
+  <section class="calendar center">
+      <div class="nav">
+          <button class="nav__button nav__button_back"></button>
+          <h2 class="nav__month"></h2>
+          <button class="nav__button nav__button_forward"></button>
+          <button class="nav__button_today">Сегодня</button>
+      </div>
+      <div class="day-cards"></div>
+  </section>
+
+  <template class="card-template">
+      <div class="day-card">
+          <p class="day-card__heading"></p>
+          <h2 class="day-card__title"></h2>
+          <p class="day-card__people"></p>
+          <p class="day-card__description"></p>
+      </div>
+  </template>
+  <template class="itemSearch-template">
+      <div class="itemSearch">
+          <h2 class="itemSearch__title"></h2>
+          <p class="itemSearch__heading"></p>
+      </div>
+  </template>
+
+  <div class="popup popup__add">
+      <div class="popup__window popup__window_add">
+          <img class="popup__decorate popup__decorate_add" src="./images/decorate.png" alt="декор" />
+          <button class="popup__close-btn"></button>
+          <form action="#" name="form" class="popup__form">
+              <input type="text" name="title" value="" class="popup__input popup__input_form_title" minlength="2" placeholder="Событие" autocomplete="off" required />
+
+              <input type="text" name="data" value="" class="popup__input popup__input_form_data" minlength="1" placeholder="День, месяц, год" autocomplete="off" required disabled />
+
+              <input type="text" name="people" value="" class="popup__input popup__input_form_people" minlength="1" placeholder="Имена участников" autocomplete="off" required />
+
+              <textarea name="description" value="" class="popup__input popup__input_form_textarea" placeholder="Описание" autocomplete="off" autocorrect="off" rows="6"></textarea>
+
+              <div class="popup__form_btns"><button type="submit" class="popup__form_btn">Готово</button> <button class="popup__form_btn popup__form_btn_reset">Удалить</button></div>
+          </form>
+      </div>
+  </div>
+  <div class="popup popup__quick">
+      <div class="popup__window popup__window_quick">
+          <img class="popup__decorate popup__decorate_quick" src="./images/decorate.png" alt="декор" />
+          <button class="popup__close-btn"></button>
+          <form action="#" name="form" class="popup__form">
+              <input type="text" name="quick" value="" class="popup__input popup__input_form_quick" placeholder="25, Кутеж, Серж" autocomplete="off" required />
+
+              <button type="submit" class="popup__form_btn">Создать</button>
+          </form>
+      </div>
+  </div>
+  <div class="popup popup__overview">
+      <div class="popup__window popup__window__overview">
+          <img class="popup__decorate popup__decorate_overview" src="./images/decorate.png" alt="декор" />
+          <button class="popup__close-btn"></button>
+          <form action="#" name="form" class="popup__form popup__form_overview">
+              <h2 class="popup__overview_title">Встреча</h2>
+              <p class="popup__overview_date">6 ноября</p>
+              <h3 class="popup__overview_subtitle">
+                  Участники: <br />
+                  <span class="popup__overview_people"></span>
+              </h3>
+
+              <textarea name="description" value="" class="popup__input popup__input_form_textarea popup__input_form_textarea_overview" minlength="2" placeholder="Описание" autocomplete="off" autocorrect="off" rows="6"></textarea>
+
+              <div class="popup__form_btns"><button type="submit" class="popup__form_btn">Готово</button> <button type="reset" class="popup__form_btn popup__form_btn_reset">Удалить</button></div>
+          </form>
+      </div>
+  </div>
+  <div class="popup popup__search">
+      <img class="popup__decorate popup__decorate_search" src="./images/decorate.png" alt="декор" />
+      <div class="popup__window popup__window_search"></div>
+  </div>
+  <script src="./script/popup.js"></script>
+  <script src="./script/dayCardClass.js"></script>
+  <script src="./script/itemClass.js"></script>
+  <script src="./script/submitFunctions.js"></script>
+  <script src="./script/secondaryFunctions.js"></script>
+  <script src="./script/script.js"></script>
+</body>
+
+
+</html>
